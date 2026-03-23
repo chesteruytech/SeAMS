@@ -8,15 +8,15 @@
     <body>
         <form action="r_process.jsp" method="post">
             Please present your passport number before registration.<br>
-            Passport Number: <label><input type="text" name="pNo"></label><br><br>
+            Passport Number: <label><input type="text" id="pPNum" required></label><br><br>
 
-            Last Name: <label><input type="text" name="lN"></label><br>
-            First Name: <label><input type="text" name="fN"></label><br>
-            Contact Number: <label><input type="text" name="c"></label><br><br>
+            Last Name: <label><input type="text" id="pLN" required></label><br>
+            First Name: <label><input type="text" id="pFN" required></label><br>
+            Contact Number: <label><input type="text" id="pC" required></label><br><br>
 
-            Username: <label><input type="text" name="u"></label><br>
-            Email: <label><input type="text" name="e"></label><br>
-            Password: <label><input type="text" name="lN"></label><br>
+            Username: <label><input type="text" id="pU" required></label><br>
+            Email: <label><input type="text" id="pE" required></label><br>
+            Password: <label><input type="password" id="pPw" required></label><br>
 
             <input type="submit" value="Submit">
         </form>

@@ -16,11 +16,9 @@ public class passengers {
     public ArrayList<String> pEmail_list = new ArrayList<>();
     public ArrayList<String> pPassword_list = new ArrayList<>();
 
-    public passengers() {
+    public passengers() {}
 
-    }
-
-    public void registerPassenger(){
+    public boolean registerPassenger(){
         try {
             // 1. Connect to SeAMS Database
             Connection seamsDB;
@@ -51,10 +49,12 @@ public class passengers {
                 seamsDB.close();
 
                 System.out.println("Passenger Registered successfully");
+                return true;
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return false;
     }
 
     static void main() {

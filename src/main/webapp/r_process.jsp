@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.*" %>
+<%@ page import="java.util.*, com.dlsu.ccinfom.seams.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,35 @@
     </head>
 
     <body>
-        <h1>Passenger Registration Successful</h1>
-        <h1>Passenger Registration Failed</h1>
+        <form action="index.html" method="post">
+            <jsp:useBean id="p" class="com.dlsu.ccinfom.seams.passengers" scope="session" />
+            <%
+                // Passport No.
+                p.pPassport = Integer.parseInt(request.getParameter("pPNum"));
+                p.pLN = request.getParameter("pLN");
+                p.pFN = request.getParameter("pFN");
+                p.pNumber = Integer.parseInt(request.getParameter("pC"));
+                p.pUsername = request.getParameter("pU");
+                p.pEmail = request.getParameter("pE");
+                p.pPassword = request.getParameter("pPw");
+
+                boolean status = p.registerPassenger();
+
+                if(status) {
+                    System.out.println("Passenger Registration Successful");
+                } else {
+                    System.out.println("Passenger Registration Failed");
+                }
+            %>
+
+<%--                // Backup if Java System.out.println doesn't work--%>
+<%--                if(status) {--%>
+<%--                    %> <h1>Passenger Registration Successful</h1> <%--%>
+<%--                } else {--%>
+<%--                    %> <h1>Passenger Registration Failed</h1> <%--%>
+<%--                }--%>
+
+            <input type="submit" value="Return to Menu">
+        </form>
     </body>
 </html>
