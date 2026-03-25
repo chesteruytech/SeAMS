@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SeAMS | Add Flight</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+        background: linear-gradient(180deg, #003e92 0%, #1572c6 50%, #7db9e8 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        header {
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header a {
+        text-decoration: none;
+        }
+
+        header h1 {
+        font-size: 28px;
+        font-weight: 900;
+        color: #003087;
+        letter-spacing: 1px;
+        }
+
+        .text-red {
+        color: #ba3636;
+        }
+
+        .container {
+        display: flex;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        width: 90%;
+        max-width: 500px;
+        justify-content: center;
+        }
+
+        .card {
+        background: white;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        overflow: hidden;
+        }
+
+        .card-header {
+        background: #f8f9fa;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px; color: #ba3636;
+        }
+
+        .card-content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column; gap: 15px;
+        }
+
+        .form-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        }
+
+        .form-group label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333; font-size: 14px;
+        }
+
+        input {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px; font-size: 14px;
+        }
+
+        .btn-submit {
+        background-color: white;
+        color: #333;
+        padding: 15px 20px;
+        border: 2px solid #e1e5ea;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 10px;
+        font-size: 16px;
+        }
+
+        .btn-submit:hover {
+        background-color: #ba3636;
+        color: white;
+        border-color: #ba3636;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <a href="index.html"><h1>Se<span class="text-red">AMS</span></h1></a>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">System Initialization</div>
+        <div class="card-content">
+            <form action="f_process.jsp" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="form-group">
+                    <label>Flight Number</label>
+                    <input type="text" name="flightNumber" placeholder="e.g., PR112" required>
+                </div>
+
+                <div class="form-group" style="display: flex; flex-direction: row; gap: 15px;">
+                    <div style="flex: 1; display: flex; flex-direction: column;">
+                        <label>Origin</label>
+                        <input type="text" name="originAirportCode" placeholder="MNL" maxlength="5" required>
+                    </div>
+                    <div style="flex: 1; display: flex; flex-direction: column;">
+                        <label>Destination</label>
+                        <input type="text" name="destinationAirportCode" placeholder="CEB" maxlength="5" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Departure Schedule</label>
+                    <input type="datetime-local" name="departureSchedule" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Arrival Schedule</label>
+                    <input type="datetime-local" name="arrivalSchedule" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Register Flight</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
