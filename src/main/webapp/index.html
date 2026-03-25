@@ -1,26 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>SeAMS | Southeast Airline Management System</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>SeAMS | System Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
 
-    <body>
-        <h1>Welcome to SeAMS!</h1>
-        <h2>Passenger</h2>
-        <a href="register.html">Register Passenger</a>
-        <br>
-        <a href="signin.html">Sign In Passenger</a>
-        <br>
-        <a href="upd.html">Update Passenger Details</a>
-        <br>
+        body {
+            background: linear-gradient(180deg, #003e92 0%, #1572c6 50%, #7db9e8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        <h2>Aircraft</h2>
-        <a href="aircraft?action=list">Aircraft Record Management</a>
-        <br>
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        <h2>Flight</h2>
-        <a href="aircraft?action=list">Aircraft Record Management</a>
-        <br>
-    </body>
+        header a {
+            text-decoration: none;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #003087;
+            letter-spacing: 1px;
+        }
+
+        .card-header.text-red, .text-red {
+            color: #ba3636;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            width: 90%;
+            max-width: 900px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            flex: 1;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            color: #003087;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        a.menu-btn {
+            text-decoration: none;
+            color: #333;
+            background: white;
+            padding: 15px 20px;
+            border: 2px solid #e1e5ea;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        a.menu-btn:hover {
+            background: #003087;
+            color: white;
+            border-color: #003087;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <a href="index.html"><h1>Se<span class="text-red">AMS</span></h1></a>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">Customer Portal</div>
+        <div class="card-content">
+            <a href="register.html" class="menu-btn">Register Passenger Account</a>
+            <a href="upd.html" class="menu-btn">Update Account Details</a>
+            <a href="book_flight.html" class="menu-btn">Book a Flight</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header text-red">Admin Controls</div>
+        <div class="card-content">
+            <a href="aircraft?action=list" class="menu-btn">Manage Aircraft</a>
+            <a href="register_flight.html" class="menu-btn">Add Flight</a>
+            <a href="revenue_report.html" class="menu-btn">Generate Booking & Revenue Report</a>
+        </div>
+    </div>
+</div>
+</body>
 </html>
