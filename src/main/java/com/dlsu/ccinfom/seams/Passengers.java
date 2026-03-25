@@ -1,9 +1,8 @@
 package com.dlsu.ccinfom.seams;
 
-import java.util.*;
 import java.sql.*;
 
-public class passengers {
+public class Passengers {
     public int pID, pPassport, pNumber;
     public String pLN, pFN, pUsername, pEmail, pPassword;
 
@@ -16,7 +15,7 @@ public class passengers {
 //    public ArrayList<String> pEmail_list = new ArrayList<>();
 //    public ArrayList<String> pPassword_list = new ArrayList<>();
 
-    public passengers() {}
+    public Passengers() {}
 
     public boolean registerPassenger(){
         try {
@@ -91,7 +90,7 @@ public class passengers {
 
     // Sample dummy data
     static void main() {
-        passengers p = new passengers();
+        Passengers p = new Passengers();
         p.pFN = "Chester Aldrin";
         p.registerPassenger();
         p.pID = 1;

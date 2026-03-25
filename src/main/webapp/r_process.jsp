@@ -9,7 +9,7 @@
 
     <body>
         <form action="index.html" method="post">
-            <jsp:useBean id="p" class="com.dlsu.ccinfom.seams.passengers" scope="session" />
+            <jsp:useBean id="p" class="com.dlsu.ccinfom.seams.Passengers" scope="session" />
             <%
                 // Passport No.
                 p.pPassport = Integer.parseInt(request.getParameter("pPNum"));
