@@ -1,7 +1,7 @@
 package com.dlsu.ccinfom.seams;
 
-import com.seams.dao.AircraftDAO;
-import com.seams.model.Aircraft;
+import com.dlsu.ccinfom.seams.AircraftDAO;
+import com.dlsu.ccinfom.seams.Aircraft;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

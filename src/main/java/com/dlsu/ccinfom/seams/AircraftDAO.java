@@ -1,7 +1,7 @@
 package com.dlsu.ccinfom.seams;
 
-import com.seams.model.Aircraft;
-import com.seams.util.DBConnection;
+import com.dlsu.ccinfom.seams.Aircraft;
+import com.dlsu.ccinfom.seams.DBConnection;
 
 import java.sql.*;
 import java.util.ArrayList;

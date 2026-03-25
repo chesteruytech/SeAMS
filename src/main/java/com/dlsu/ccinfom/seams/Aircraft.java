@@ -1,13 +1,8 @@
 package com.dlsu.ccinfom.seams;
 
 public class Aircraft {
-    private int aircraftID;
-    private int passengerID;
-    private int flightID;
-    private String aircraftRegistration;
-    private String aircraftModel;
-    private int seatAvailable;
-    private int seatCapacity;
+    private int aircraftID, passengerID, flightID, seatAvailable, seatCapacity;
+    private String aircraftRegistration, aircraftModel;
 
     public Aircraft() {}
 
