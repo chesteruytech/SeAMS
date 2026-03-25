@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
@@ -22,28 +22,22 @@
         </c:if>
 
         <div class="form-group">
-            <label>Registration:</label>
-            <input type="text" name="aircraftRegistration" value="${aircraft.aircraftRegistration}" required />
+            <label>Registration:<input type="text" name="aircraftRegistration" value="${aircraft.aircraftRegistration}" required /></label>
         </div>
         <div class="form-group">
-            <label>Model:</label>
-            <input type="text" name="aircraftModel" value="${aircraft.aircraftModel}" required />
+            <label>Model:<input type="text" name="aircraftModel" value="${aircraft.aircraftModel}" required /></label>
         </div>
         <div class="form-group">
-            <label>Passenger ID:</label>
-            <input type="number" name="passengerID" value="${aircraft.passengerID}" required />
+            <label>Passenger ID:<input type="number" name="passengerID" value="${aircraft.passengerID}" required /></label>
         </div>
         <div class="form-group">
-            <label>Flight ID:</label>
-            <input type="number" name="flightID" value="${aircraft.flightID}" required />
+            <label>Flight ID:<input type="number" name="flightID" value="${aircraft.flightID}" required /></label>
         </div>
         <div class="form-group">
-            <label>Seat Capacity:</label>
-            <input type="number" name="seatCapacity" value="${aircraft.seatCapacity}" required />
+            <label>Seat Capacity:<input type="number" name="seatCapacity" value="${aircraft.seatCapacity}" required /></label>
         </div>
         <div class="form-group">
-            <label>Seats Available:</label>
-            <input type="number" name="seatAvailable" value="${aircraft.seatAvailable}" required />
+            <label>Seats Available:<input type="number" name="seatAvailable" value="${aircraft.seatAvailable}" required /></label>
         </div>
 
         <button type="submit">Save Aircraft</button>
