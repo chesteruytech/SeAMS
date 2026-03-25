@@ -50,3 +50,48 @@ INSERT INTO aircraft (passengerID, flightID, aircraftRegistration, aircraftModel
 (108, 5002, 'RP-C3302', 'Airbus A330', 0, 300),
 (109, 5007, 'RP-C3501', 'Airbus A350', 80, 320),
 (110, 5008, 'RP-C7372', 'Boeing 737', 160, 160);
+
+DROP TABLE IF EXISTS flight;
+
+CREATE TABLE flight (
+    flightID INT AUTO_INCREMENT PRIMARY KEY COMMENT 'Unique identifier for the flight',
+    flightNumber VARCHAR(10) NOT NULL COMMENT 'Assigned flight code (e.g., PR112)',
+    departureSchedule DATETIME NOT NULL COMMENT 'Scheduled time of departure',
+    arrivalSchedule DATETIME NOT NULL COMMENT 'Scheduled time of arrival',
+    originAirportCode VARCHAR(5) NOT NULL COMMENT '3-letter IATA code for departure',
+    destinationAirportCode VARCHAR(5) NOT NULL COMMENT '3-letter IATA code for arrival'
+);
+
+INSERT INTO flight (flightID, flightNumber, departureSchedule, arrivalSchedule, originAirportCode, destinationAirportCode) VALUES
+(5001, 'PR112', '2026-04-10 08:00:00', '2026-04-10 09:30:00', 'MNL', 'CEB'),
+(5002, 'PR223', '2026-04-11 14:00:00', '2026-04-11 15:15:00', 'MNL', 'DVO'),
+(5003, 'PR334', '2026-04-12 10:00:00', '2026-04-12 11:20:00', 'CEB', 'DVO'),
+(5004, 'PR445', '2026-04-13 16:30:00', '2026-04-13 17:45:00', 'DVO', 'MNL'),
+(5005, 'PR556', '2026-04-14 07:00:00', '2026-04-14 08:10:00', 'MNL', 'ILO'),
+(5006, 'PR667', '2026-04-15 13:00:00', '2026-04-15 14:20:00', 'ILO', 'CEB'),
+(5007, 'PR778', '2026-04-16 09:15:00', '2026-04-16 10:30:00', 'CEB', 'MNL'),
+(5008, 'PR889', '2026-04-17 18:00:00', '2026-04-17 19:15:00', 'MNL', 'PPS');
+
+DROP TABLE IF EXISTS booking;
+
+CREATE TABLE booking (
+    passengerID INT NOT NULL COMMENT 'Link to passengers table',
+    flightID INT NOT NULL COMMENT 'Link to flight table',
+
+    seatNumber VARCHAR(10) NOT NULL COMMENT 'Assigned seat (e.g., 12A)',
+    paymentStatus VARCHAR(45) NOT NULL COMMENT 'Status: Paid or Pending',
+    amountPaid DECIMAL(10,2) NOT NULL COMMENT 'Total amount paid for the ticket',
+    bookingDate DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Timestamp for revenue reporting',
+
+    PRIMARY KEY (passengerID, flightID),
+
+    FOREIGN KEY (passengerID) REFERENCES passengers(passengerID),
+    FOREIGN KEY (flightID) REFERENCES flight(flightID)
+);
+
+INSERT INTO booking (passengerID, flightID, seatNumber, paymentStatus, amountPaid, bookingDate) VALUES
+(101, 5001, '12A', 'Paid', 5500.00, '2026-04-01 10:30:00'),
+(102, 5001, '12B', 'Paid', 5500.00, '2026-04-01 11:15:00'),
+(103, 5002, '14C', 'Paid', 4200.50, '2026-04-02 09:00:00'),
+(104, 5003, '01A', 'Paid', 8500.00, '2026-04-02 14:20:00'),
+(105, 5004, '22F', 'Pending', 3000.00, '2026-04-03 16:45:00');
