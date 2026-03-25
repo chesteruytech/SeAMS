@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="aircraft" scope="session" type="com.dlsu.ccinfom.seams.Aircraft"/>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>View Aircraft - SeAMS</title>
