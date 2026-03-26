@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
@@ -17,8 +17,7 @@
 
     <form action="aircraft" method="get">
         <input type="hidden" name="action" value="seatsByFlight" />
-        <label>Enter Flight ID: </label>
-        <input type="number" name="flightID" value="${searchedFlightId}" required />
+        <label>Enter Flight ID:</label>
         <button type="submit">Search</button>
     </form>
 

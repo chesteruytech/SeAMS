@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
@@ -31,6 +31,7 @@
             <th>Available Seats</th>
             <th>Actions</th>
         </tr>
+        <jsp:useBean id="listAircraft" scope="request" type="java.util.List"/>
         <c:forEach var="ac" items="${listAircraft}">
             <tr>
                 <td>${ac.aircraftID}</td>
