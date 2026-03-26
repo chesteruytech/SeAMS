@@ -22,22 +22,28 @@
         </c:if>
 
         <div class="form-group">
-            <label>Registration:<input type="text" name="aircraftRegistration" value="${aircraft.aircraftRegistration}" required /></label>
+            <label>Registration:</label>
+            <input type="text" name="aircraftRegistration" value="${aircraft.aircraftRegistration}" required />
         </div>
         <div class="form-group">
-            <label>Model:<input type="text" name="aircraftModel" value="${aircraft.aircraftModel}" required /></label>
+            <label>Model:</label>
+            <input type="text" name="aircraftModel" value="${aircraft.aircraftModel}" required />
         </div>
         <div class="form-group">
-            <label>Passenger ID:<input type="number" name="passengerID" value="${aircraft.passengerID}" required /></label>
+            <label>Passenger ID:</label>
+            <input type="number" name="passengerID" value="${aircraft.passengerID}" required />
         </div>
         <div class="form-group">
-            <label>Flight ID:<input type="number" name="flightID" value="${aircraft.flightID}" required /></label>
+            <label>Flight ID:</label>
+            <input type="number" name="flightID" value="${aircraft.flightID}" required />
         </div>
         <div class="form-group">
-            <label>Seat Capacity:<input type="number" name="seatCapacity" value="${aircraft.seatCapacity}" required /></label>
+            <label>Seat Capacity:</label>
+            <input type="number" name="seatCapacity" value="${aircraft.seatCapacity}" required />
         </div>
         <div class="form-group">
-            <label>Seats Available:<input type="number" name="seatAvailable" value="${aircraft.seatAvailable}" required /></label>
+            <label>Seats Available:</label>
+            <input type="number" name="seatAvailable" value="${aircraft.seatAvailable}" required />
         </div>
 
         <button type="submit">Save Aircraft</button>
