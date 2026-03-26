@@ -22,19 +22,13 @@
 
                 boolean status = p.registerPassenger();
 
+                // Backup if Java System.out.println doesn't work
                 if(status) {
-                    System.out.println("Passenger Registration Successful");
+                    %> <h1>Passenger Registration Successful</h1> <%
                 } else {
-                    System.out.println("Passenger Registration Failed");
+                    %> <h1>Passenger Registration Failed</h1> <%
                 }
             %>
-
-<%--                // Backup if Java System.out.println doesn't work--%>
-<%--                if(status) {--%>
-<%--                    %> <h1>Passenger Registration Successful</h1> <%--%>
-<%--                } else {--%>
-<%--                    %> <h1>Passenger Registration Failed</h1> <%--%>
-<%--                }--%>
 
             <input type="submit" value="Return to Menu">
         </form>

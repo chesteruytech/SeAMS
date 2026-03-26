@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SeAMS | Passenger Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #003e92 0%, #1572c6 50%, #7db9e8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header a { text-decoration: none; }
+        header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #003087;
+            letter-spacing: 1px;
+        }
+
+        .text-red { color: #ba3636; }
+
+        .container {
+            display: flex;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            width: 90%;
+            max-width: 500px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+            color: #003087;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        p.desc {
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn-submit {
+            background-color: white;
+            color: #333;
+            padding: 15px 20px;
+            border: 2px solid #e1e5ea;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #003087;
+            color: white;
+            border-color: #003087;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <a href="index.html"><h1>Se<span class="text-red">AMS</span></h1></a>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">Update Passenger Details</div>
+        <div class="card-content">
+            <p class="desc">Please present your passport number to update your account.</p>
+
+            <form action="r_process.jsp" method="post" style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="form-group">
+                    <label>Passport Number</label>
+                    <input type="number" id="pPNum" name="pPNum" required>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>First Name</label>
+                        <input type="text" id="pFN" name="pFN" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>Last Name</label>
+                        <input type="text" id="pLN" name="pLN" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" id="pC" name="pC" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="pE" name="pE" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="pU" name="pU" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="pPw" name="pPw" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
