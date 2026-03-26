@@ -56,7 +56,7 @@ public class Passengers {
                 System.out.println("Connection successful");
 
                 // 2. Prepare an SQL Statement to update the passenger data
-                PreparedStatement ps = seamsDB.prepareStatement("UPDATE aircraft SET passengerID=?, passportNumber=?, lastName=?, firstName=?, contactNumber=?, username=?, contactEmail=?, password=? WHERE passengerID=?");
+                PreparedStatement ps = seamsDB.prepareStatement("UPDATE passengers SET passengerID=?, passportNumber=?, lastName=?, firstName=?, contactNumber=?, username=?, contactEmail=?, password=? WHERE passengerID=?");
                 ps.setInt(1, pID);
                 ps.setInt(2, pPassport);
                 ps.setString(3, pLN);
@@ -65,7 +65,6 @@ public class Passengers {
                 ps.setString(6, pUsername);
                 ps.setString(7, pEmail);
                 ps.setString(8, pPassword);
-                ps.executeUpdate();
                 ps.executeUpdate();
 
                 ps.close();

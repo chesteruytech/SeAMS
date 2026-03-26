@@ -40,7 +40,7 @@ public class Booking {
                 seamsDB.close();
 
                 if (rowsAffected > 0) {
-                    System.out.println("Ticket booked successfully!");
+                    System.out.println("Ticket Booked Successfully!");
                     return true;
                 }
             }
